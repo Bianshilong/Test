@@ -25,7 +25,7 @@ public class Select extends HttpServlet {
 		
 		out.println("<html>");
 		out.println("<body>");
-		out.println("<form>");
+		out.println("<form action=\"/Test/DeleteMore\">");
 		out.println("<table border='1'>");
 		out.println("<tr><td colspan='6'>用户列表</td></tr>");
 		out.println("<tr>");
@@ -42,7 +42,7 @@ public class Select extends HttpServlet {
 			UserInfo user = (UserInfo) list.get(i);
 			out.println("<tr>");
 			out.println("<td>");
-			out.println("<input type=\"checkbox\" name =\"duoxuan\">");
+			out.println("<input type=\"checkbox\" name =\"duoxuan\" value=\""+user.getId()+"\">");
 			out.println("</td>");
 			out.println("<td>" + user.getId() + "</td>");
 			int id = user.getId();
@@ -62,7 +62,7 @@ public class Select extends HttpServlet {
 			e.printStackTrace();
 		}
 		out.println("</table>");
-		out.println("<input type=\"button\" value=\"删除所有勾选的\" />");
+		out.println("<input type=\"submit\" value=\"删除所有勾选的\" />");
 		out.println("</form>");
 		out.println("</body>");
 		out.println("</html>");

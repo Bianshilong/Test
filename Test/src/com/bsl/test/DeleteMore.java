@@ -11,14 +11,18 @@ import javax.servlet.http.HttpServletResponse;
 public class DeleteMore extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		
-		String[] str = request.getParameterValues("id");
+		//取得查询串，并通过字符串函数转换成数组
+		String str = request.getQueryString();
+		String[] st = new String(str).split("&");
+		for (int i = 0; i < st.length; i++) {
+			st[i] = st[i].substring(8);
+		}
+		//将获得的结果拼接成字符串
 		String ids = "";
-		for (String st : str) {
-			ids=ids+st+",";
+		for (int i = 0; i < st.length; i++) {
+			ids = ids+st[i]+",";
 		}
 		ids=ids.substring(0, ids.length()-1);
-		System.out.println(ids);
 		Method md = new Method();
 		try {
 			md.removeMore(ids);
@@ -26,7 +30,7 @@ public class DeleteMore extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		response.sendRedirect("/Test/index.jsp");
 		
 	}
 	
