@@ -15,7 +15,7 @@ public class Method {
 	public static final String DBPWD = "root";
 	
 	public ArrayList findAll() throws Exception {
-		
+		Class.forName(DBRIVER);
 		Connection conn=null;
 		Statement st = null;
 		ResultSet rs = null;
@@ -42,7 +42,7 @@ public class Method {
 	}
 	
 	public void insert(String name,String age,String cell) throws Exception{
-		
+		Class.forName(DBRIVER);
 		Connection conn=null;
 		PreparedStatement st = null;
 		ResultSet rs = null;
@@ -56,10 +56,12 @@ public class Method {
 		st.setString(2, age);
 		st.setString(3, cell);
 		st.executeUpdate();
+		st.close();
+		conn.close();
 	} 
 		
 	public void remove(int id) throws Exception{
-		
+		Class.forName(DBRIVER);
 		Connection conn=null;
 		PreparedStatement st = null;
 		ResultSet rs = null;
@@ -70,6 +72,70 @@ public class Method {
 		st = conn.prepareStatement(sql);
 		st.setInt(1, id);
 		st.executeUpdate();
+		st.close();
+		conn.close();
 		
 	}
+	//删除多个记录，暂未写完
+	public void removeMore(String ids) throws Exception{
+		Class.forName(DBRIVER);
+		Connection conn=null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		
+		String sql = "delete from info where id in (?"+")";
+		
+		conn = DriverManager.getConnection(DBURL,DBUSER,DBPWD);
+		st = conn.prepareStatement(sql);
+		st.setString(1, ids);
+		st.executeUpdate();
+		st.close();
+		conn.close();
+		
+	}
+	//数据更新
+	public UserInfo findById(int id) throws Exception{
+		
+		Class.forName(DBRIVER);
+		Connection conn=null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		UserInfo user=null;
+		String sql = "select * from info where id = ?";
+		conn = DriverManager.getConnection(DBURL,DBUSER,DBPWD);
+		st = conn.prepareStatement(sql);
+		st.setInt(1, id);
+		rs=st.executeQuery();
+		while (rs.next()) {
+			user = new UserInfo();
+			user.setId(rs.getInt("id"));
+			user.setName(rs.getString("name"));
+			user.setAge(rs.getString("age"));
+			user.setCell(rs.getString("cell"));
+		}
+		rs.close();
+		st.close();
+		conn.close();
+		return user;
+	}
+	
+	//更新数据
+	public void update(UserInfo user) throws Exception{
+		
+		Class.forName(DBRIVER);
+		Connection conn=null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		String sql = "update info set name=?,age=?,cell=? where id = ?";
+		conn = DriverManager.getConnection(DBURL,DBUSER,DBPWD);
+		st = conn.prepareStatement(sql);
+		st.setString(1, user.getName());
+		st.setString(2, user.getAge());
+		st.setString(3, user.getCell());
+		st.setInt(4, user.getId());
+		st.executeUpdate();
+		st.close();
+		conn.close();
+	}
+	
 }

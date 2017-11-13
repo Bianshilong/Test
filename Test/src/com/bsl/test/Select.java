@@ -22,6 +22,10 @@ public class Select extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html;charset=UTF-8");
+		
+		out.println("<html>");
+		out.println("<body>");
+		out.println("<form>");
 		out.println("<table border='1'>");
 		out.println("<tr><td colspan='6'>用户列表</td></tr>");
 		out.println("<tr>");
@@ -41,13 +45,14 @@ public class Select extends HttpServlet {
 			out.println("<input type=\"checkbox\" name =\"duoxuan\">");
 			out.println("</td>");
 			out.println("<td>" + user.getId() + "</td>");
+			int id = user.getId();
 			out.println("<td>" + user.getName() + "</td>");
 			out.println("<td>" + user.getAge() + "</td>");
 			out.println("<td>" + user.getCell() + "</td>");
 			out.println("<td>");
-			out.println("<a href='/Test/Delete?id=<%=user.getId()%>'>");
+			out.println("<a href='/Test/Delete?id="+id+"'>");
 			out.println("删除</a>");
-			out.println("<a href='/Test/Servlet/Update'>");
+			out.println("<a href='/Test/Servlet/Update?oldid="+id+"'>");
 			out.println("更新</a>");
 			out.println("</td>");
 			out.println("</tr>");
@@ -57,6 +62,10 @@ public class Select extends HttpServlet {
 			e.printStackTrace();
 		}
 		out.println("</table>");
+		out.println("<input type=\"button\" value=\"删除所有勾选的\" />");
+		out.println("</form>");
+		out.println("</body>");
+		out.println("</html>");
 
 	}
 
