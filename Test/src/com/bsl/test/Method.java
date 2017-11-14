@@ -76,18 +76,17 @@ public class Method {
 		conn.close();
 		
 	}
-	//删除多个记录，暂未写完
+	//删除多个记录
 	public void removeMore(String ids) throws Exception{
 		Class.forName(DBRIVER);
 		Connection conn=null;
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		
-		String sql = "delete from info where id in (?"+")";
-		
+//		String sql = "delete from info where id in ("+ids+")";
+		String sql =ids;
 		conn = DriverManager.getConnection(DBURL,DBUSER,DBPWD);
 		st = conn.prepareStatement(sql);
-		st.setString(1, ids);
 		st.executeUpdate();
 		st.close();
 		conn.close();

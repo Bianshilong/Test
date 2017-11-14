@@ -39,7 +39,7 @@ public class Update extends HttpServlet {
 		
 		out.println("<form method =\"post\" action=\"/Test/Update2\">");
 //		out.println("<form method =\"post\"");
-		out.println("需要更新的ID:<input type=\"text\" value=\""+id+"\" name= \"id\"></br>");
+		out.println("需要更新的ID:<input type=\"text\" value=\""+id+"\" name= \"id\" readonly=\"readonly\"></br>");
 		out.println("需要更新的姓名:<input type=\"text\" value=\""+name+"\" name= \"name\"></br>");
 		out.println("更新后的年龄:<input type=\"text\" value=\""+age+"\" name= \"age\"></br>");
 		out.println("更新后的手机号码:<input type=\"text\" value=\""+cell+"\" name= \"cell\"></br>");
