@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+body{ 
+    background: #f0f1f2; min-width: 1200px; font-family: '\5FAE\8F6F\96C5\9ED1', 'Microsoft YaHei', '\5FAE\8F6F\6B63\9ED1\4F53', 'Microsoft JhengHei', '\65B0\7EC6\660E\4F53', 'PMingLiU', '\534E\6587\9ED1\4F53', 'STHeiti', Helvetica, Arial, sans-serif;
+    font-weight:200;
+}
+.page-index .page-main{ padding-bottom: 53px;}
+.page_wrapper{ padding: 70px 0 0 0;}
+.columns{width:1200px; margin-left:auto; margin-right:auto; box-sizing:border-box;}
+
+/* Header */
+.page-header{ background: #34394e; width: 100%; position: fixed; top: 0; left: 0; z-index: 9999;}
+.page-header .logo{ float: left; padding: 12px 0;}
+.page-header .logo a{ display: block; line-height: 0;}
+.page-header .logo a img{ display: block;}
+.nav-sections{ float: left; margin: 0 0 0 80px; padding: 22px 0 0 0;}  /*.nav-sections{ float: left; margin: 0 0 0 107px; padding: 22px 0 0 0;}*/
+.navigation ul{ margin: 0; padding: 0; list-style: none;}
+.navigation ul:after{ content: ''; display: block; clear: both; line-height: 0; height: 0; visibility: hidden;}
+.navigation ul li{ float: left; margin: 0 5px 0 0;}
+.navigation ul li:last-child{ margin-right: 0;}
+.navigation ul li a{ display: block; color: #fff; font-size: 16px; line-height: 24px; font-weight: 300; text-decoration: none;}
+.navigation ul li a span{ display: block; padding: 0 20px 20px 20px; border-bottom: solid 4px transparent;}
+.navigation ul li:hover a span,
+.navigation ul li.active a span,
+.navigation ul li a:hover span{ border-color: #fff;}
