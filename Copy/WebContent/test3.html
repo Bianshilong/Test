@@ -14,12 +14,12 @@
 <script src="test/jquery-3.2.1.min.js"></script>
 <script src="test/owl.carousel.js"></script>
 <style type="text/css">
-.slide {
+.banner_slider {
 	position: relative;
 	min-height: 520px;
 }
 
-.slide .owl-item a {
+.banner_slider .banner_item a {
 	display: block;
 	width: 100%;
 	min-height: 520px;
@@ -32,29 +32,41 @@
 </style>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$(".owl-carousel").owlCarousel({
+		$('.banner_slider .banner_content').owlCarousel({
+			loop : true,
+			margin : 0,
+			smartSpeed : 1000,
+			responsiveClass : true,
+			autoHeight : true,
+			autoplay : true,
 			items : 1,
-			autoPlay : true
 		});
 	});
 </script>
 </head>
 <body>
-	<div class="slide">
-		<div class="owl-carousel owl-theme owl-loaded">
+	<div class="banner_slider">
+		<div class="banner_content owl-carousel owl-theme owl-loaded">
 			<div class="owl-stage-outer" style="height: 520px;">
-				<div class="owl-stage" style="transform:translate3d(0px,0px,0px);transiton:1s;">
+				<div class="owl-stage"
+					style="transform: translate3d(0px, 0px, 0px); transiton: 1s;">
 					<div class="owl-item">
-						<a href="http://www.baidu.com" title="first" target="_blank"
-							style="background-image: url(images/test/first.jpg);">first</a>
+						<div class="banner_item">
+							<a href="http://www.baidu.com" title="first" target="_blank"
+								style="background-image: url(images/test/first.jpg);">first</a>
+						</div>
 					</div>
 					<div class="owl-item">
-						<a href="http://www.baidu.com" title="second" target="_blank"
-							style="background-image: url(images/test/second.jpg);">second</a>
+						<div class="banner_item">
+							<a href="http://www.baidu.com" title="second" target="_blank"
+								style="background-image: url(images/test/second.jpg);">second</a>
+						</div>
 					</div>
 					<div class="owl-item">
-						<a href="http://www.baidu.com" title="third" target="_blank"
-							style="background-image: url(images/test/third.jpg);">third</a>
+						<div class="banner_item">
+							<a href="http://www.baidu.com" title="third" target="_blank"
+								style="background-image: url(images/test/third.jpg);">third</a>
+						</div>
 					</div>
 				</div>
 			</div>
