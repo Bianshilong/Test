@@ -19,7 +19,7 @@
 	min-height: 520px;
 }
 
-.slide .owl-item a {
+.slide .slide_item a {
 	display: block;
 	width: 100%;
 	min-height: 520px;
@@ -34,7 +34,9 @@
 	$(document).ready(function() {
 		$(".owl-carousel").owlCarousel({
 			items : 1,
+			
 			autoPlay : true
+			
 		});
 	});
 </script>
@@ -43,18 +45,24 @@
 	<div class="slide">
 		<div class="owl-carousel owl-theme owl-loaded">
 			<div class="owl-stage-outer" style="height: 520px;">
-				<div class="owl-stage" style="transform:translate3d(0px,0px,0px);transiton:1s;">
-					<div class="owl-item">
-						<a href="http://www.baidu.com" title="first" target="_blank"
-							style="background-image: url(images/test/first.jpg);">first</a>
+				<div class="owl-stage" style="width: 9905px;">
+					<div class="owl-item" >
+						<div class="slide_item">
+							<a href="http://www.baidu.com" title="first" target="_blank"
+								style="background-image: url(images/test/first.jpg);">first</a>
+						</div>
 					</div>
 					<div class="owl-item">
-						<a href="http://www.baidu.com" title="second" target="_blank"
-							style="background-image: url(images/test/second.jpg);">second</a>
+						<div class="slide_item">
+							<a href="http://www.baidu.com" title="second" target="_blank"
+								style="background-image: url(images/test/second.jpg);">second</a>
+						</div>
 					</div>
 					<div class="owl-item">
-						<a href="http://www.baidu.com" title="third" target="_blank"
-							style="background-image: url(images/test/third.jpg);">third</a>
+						<div class="slide_item">
+							<a href="http://www.baidu.com" title="third" target="_blank"
+								style="background-image: url(images/test/third.jpg);">third</a>
+						</div>
 					</div>
 				</div>
 			</div>
