@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>飛天网事--纯CSS代码实现图片轮播</title>
+<meta charset="utf-8" />
+<meta name="description"
+	content="飛天网事，WEB前端开发，纯css3代码图片轮播，HTML5+CSS3精彩案例" />
+<meta name="keywords" content="飛天网事，WEB前端开发，HTML5，CSS3，jQuery，" />
+<meta name="author" content="R.tian @eduppp.cn 2015">
+<link rel="shortcut icon" href="http://eduppp.cn/images/logo4.gif" />
+<link rel="apple-touch-icon" href="http://eduppp.cn/images/logo.gif" />
+<link href="test/owl.carousel.css" rel="stylesheet">
+<link href="test/owl.theme.default.css" rel="stylesheet">
+<script src="test/jquery-3.2.1.min.js"></script>
+<script src="test/owl.carousel.js"></script>
+<style type="text/css">
+.slide {
+	position: relative;
+	min-height: 520px;
+}
+
+.slide .owl-item a {
+	display: block;
+	width: 100%;
+	min-height: 520px;
+	font-size: 0;
+	line-height: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+</style>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".owl-carousel").owlCarousel({
+			items : 1,
+			autoPlay : true
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="slide">
+		<div class="owl-carousel owl-theme owl-loaded">
+			<div class="owl-stage-outer" style="height: 520px;">
+				<div class="owl-stage" style="transform:translate3d(0px,0px,0px);transiton:1s;">
+					<div class="owl-item">
+						<a href="http://www.baidu.com" title="first" target="_blank"
+							style="background-image: url(images/test/first.jpg);">first</a>
+					</div>
+					<div class="owl-item">
+						<a href="http://www.baidu.com" title="second" target="_blank"
+							style="background-image: url(images/test/second.jpg);">second</a>
+					</div>
+					<div class="owl-item">
+						<a href="http://www.baidu.com" title="third" target="_blank"
+							style="background-image: url(images/test/third.jpg);">third</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+</body>
+</html>
